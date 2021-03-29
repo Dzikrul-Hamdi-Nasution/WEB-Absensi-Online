@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title>ABSENSI ONLINE</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:400,600,700"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+
+  <body>
+    <div id="login_div" class="main-div">
+      <h3>Absensi Online Suhu Tubuh</h3>
+      <input type="email" placeholder="Email..." id="email_field" />
+      <input type="password" placeholder="Password..." id="password_field" />
+
+      <button onclick="login()">Login to Account</button>
+      <br />
+    </div>
+
+    <div id="user_div" class="loggedin-div">
+      <h1>WELCOME !!!</h1>
+
+      <p id="user_para">
+        Silahkan Mulai untuk memeriksa mahasiswa yang hadir
+      </p>
+      <button onclick="logout()">Logout</button>
+      <br />
+
+      <a href="admin.html">MULAI APLIKASI</a>
+    </div>
+
+    <div id="user_div2" class="loggedin-div">
+      <h1>Register</h1>
+
+      <p id="user_para">Verifikasi Email Anda</p>
+
+      <button onclick="verifikasi()">Verifikasi Email</button>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDJAEvo0zV_oREc9NTyxi4ZE47BP07p7Xw",
+        authDomain: "suhu-71239.firebaseapp.com",
+        databaseURL: "https://suhu-71239.firebaseio.com",
+        projectId: "suhu-71239",
+        storageBucket: "suhu-71239.appspot.com",
+        messagingSenderId: "652003251498",
+        appId: "1:652003251498:web:7ca65362f70c11f0effa53",
+        measurementId: "G-MH3WW1ESZK",
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="login.js"></script>
+  </body>
+</html>

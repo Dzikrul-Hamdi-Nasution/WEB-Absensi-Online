@@ -1,0 +1,2035 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- <script src="bootstrap/js/style.js"></script> -->
+
+    <link rel="stylesheet" href="index.css" />
+    <title>Absensi Tercanggih</title>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <script src="jquery-3.5.1.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#refresh").click(function () {
+          firebase.auth().signOut();
+          alert("Data Sudah Diperbarui dan tersimpan di database")
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <script src="/__/firebase/7.14.4/firebase-app.js"></script>
+    <script src="/__/firebase/7.14.4/firebase-analytics.js"></script>
+    <script src="/__/firebase/7.14.4/firebase-auth.js"></script>
+    <script src="/__/firebase/7.14.4/firebase-firestore.js"></script>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container text">
+        <a class="navbar-brand" href="#halaman-utama">
+          <img
+            src="assets/img/fixdy.png"
+            width="90"
+            height="40"
+            alt="logo fixdy"
+          />
+        </a>
+      </div>
+    </nav>
+    <br /><br /><br />
+
+    <div class="container">
+      <h2 align="center">LATEST LOGIN</h2>
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">NAME</th>
+            <th scope="col">STATUSES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>
+              <input style="border: none;" type="text" id="nama1" readonly />
+              <input
+                type="radio"
+                onclick="satu()"
+                name="nama1"
+                value="present"
+              />Present
+              <input
+                type="radio"
+                onclick="dua()"
+                name="nama1"
+                value="alpha"
+              />Alpha
+              <input
+                type="radio"
+                onclick="tiga()"
+                name="nama1"
+                value="sick"
+              />Sick
+              <input
+                type="radio"
+                onclick="empat()"
+                name="nama1"
+                value="permit"
+              />Permit
+            </td>
+            <td>
+              <input style="border: none;" type="text" id="status1" readonly />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>
+              <input style="border: none;" type="text" id="nama2" readonly />
+              <input
+                type="radio"
+                onclick="lima()"
+                name="nama2"
+                value="present"
+              />Present
+              <input
+                type="radio"
+                onclick="enam()"
+                name="nama2"
+                value="present"
+              />Alpha
+              <input
+                type="radio"
+                onclick="tujuh()"
+                name="nama2"
+                value="present"
+              />Sick
+              <input
+                type="radio"
+                onclick="delapan()"
+                name="nama2"
+                value="present"
+              />Permit
+            </td>
+            <td>
+              <input style="border: none;" type="text" id="status2" readonly />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>
+              <input style="border: none;" type="text" id="nama3" readonly />
+              <input
+                type="radio"
+                onclick="sembilan()"
+                name="nama3"
+                value="present"
+              />Present
+              <input
+                type="radio"
+                onclick="sepuluh()"
+                name="nama3"
+                value="present"
+              />Alpha
+              <input
+                type="radio"
+                onclick="sebelas()"
+                name="nama3"
+                value="present"
+              />Sick
+              <input
+                type="radio"
+                onclick="duabelas()"
+                name="nama3"
+                value="present"
+              />Permit
+            </td>
+            <td>
+              <input style="border: none;" type="text" id="status3" readonly />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div align="center">
+        <button type="button" id="refresh" class="btn-block t-no">
+          <a href="index.html">
+            LOGOUT
+          </a>
+        </button>
+
+        <br />
+        <br />
+      </div>
+
+      <h3>SENIN</h3>
+      <h5>"Mata Kuliah 1"</h5>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">NAME</th>
+            <th scope="col">STATUSES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>
+              <input style="border: none;" type="text" id="nama1_1a" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status1_1a"
+                readonly
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>
+              <input style="border: none;" type="text" id="nama2_1a" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status2_1a"
+                readonly
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>
+              <input style="border: none;" type="text" id="nama3_1a" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status3_1a"
+                readonly
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+
+      <h5>"Mata Kuliah 2"</h5>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">NAME</th>
+            <th scope="col">STATUSES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>
+              <input style="border: none;" type="text" id="nama1_2a" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status1_2a"
+                readonly
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>
+              <input style="border: none;" type="text" id="nama2_2a" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status2_2a"
+                readonly
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>
+              <input style="border: none;" type="text" id="nama3_2a" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status3_2a"
+                readonly
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br /><br />
+
+      <h3>SELASA</h3>
+      <h5>"Mata Kuliah 1"</h5>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">NAME</th>
+            <th scope="col">STATUSES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>
+              <input style="border: none;" type="text" id="nama1_1b" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status1_1b"
+                readonly
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>
+              <input style="border: none;" type="text" id="nama2_1b" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status2_1b"
+                readonly
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>
+              <input style="border: none;" type="text" id="nama3_1b" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status3_1b"
+                readonly
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+
+      <h5>"Mata Kuliah 2"</h5>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">NAME</th>
+            <th scope="col">STATUSES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>
+              <input style="border: none;" type="text" id="nama1_2b" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status1_2b"
+                readonly
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>
+              <input style="border: none;" type="text" id="nama2_2b" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status2_2b"
+                readonly
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>
+              <input style="border: none;" type="text" id="nama3_2b" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status3_2b"
+                readonly
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+
+      <h3>RABU</h3>
+      <h5>"Mata Kuliah 1"</h5>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">NAME</th>
+            <th scope="col">STATUSES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>
+              <input style="border: none;" type="text" id="nama1_1c" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status1_1c"
+                readonly
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>
+              <input style="border: none;" type="text" id="nama2_1c" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status2_1c"
+                readonly
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>
+              <input style="border: none;" type="text" id="nama3_1c" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status3_1c"
+                readonly
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+
+      <h5>"Mata Kuliah 2"</h5>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">NAME</th>
+            <th scope="col">STATUSES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>
+              <input style="border: none;" type="text" id="nama1_2c" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status1_2c"
+                readonly
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>
+              <input style="border: none;" type="text" id="nama2_2c" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status2_2c"
+                readonly
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>
+              <input style="border: none;" type="text" id="nama3_2c" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status3_2c"
+                readonly
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+
+      <h3>KAMIS</h3>
+      <h5>"Mata Kuliah 1"</h5>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">NAME</th>
+            <th scope="col">STATUSES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>
+              <input style="border: none;" type="text" id="nama1_1d" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status1_1d"
+                readonly
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>
+              <input style="border: none;" type="text" id="nama2_1d" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status2_1d"
+                readonly
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>
+              <input style="border: none;" type="text" id="nama3_1d" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status3_1d"
+                readonly
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+
+      <h5>"Mata Kuliah 2"</h5>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">NAME</th>
+            <th scope="col">STATUSES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>
+              <input style="border: none;" type="text" id="nama1_2d" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status1_2d"
+                readonly
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>
+              <input style="border: none;" type="text" id="nama2_2d" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status2_2d"
+                readonly
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>
+              <input style="border: none;" type="text" id="nama3_2d" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status3_2d"
+                readonly
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+
+      <h3>JUMAT</h3>
+      <h5>"Mata Kuliah 1"</h5>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">NAME</th>
+            <th scope="col">STATUSES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>
+              <input style="border: none;" type="text" id="nama1_1e" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status1_1e"
+                readonly
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>
+              <input style="border: none;" type="text" id="nama2_1e" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status2_1e"
+                readonly
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>
+              <input style="border: none;" type="text" id="nama3_1e" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status3_1e"
+                readonly
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+
+      <h5>"Mata Kuliah 2"</h5>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">NAME</th>
+            <th scope="col">STATUSES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>
+              <input style="border: none;" type="text" id="nama1_2e" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status1_2e"
+                readonly
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>
+              <input style="border: none;" type="text" id="nama2_2e" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status2_2e"
+                readonly
+              />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>
+              <input style="border: none;" type="text" id="nama3_2e" readonly />
+            </td>
+            <td>
+              <input
+                style="border: none;"
+                type="text"
+                id="status3_2e"
+                readonly
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
+    <script>
+      var config = {
+        apiKey: "AIzaSyDJAEvo0zV_oREc9NTyxi4ZE47BP07p7Xw",
+        authDomain: "suhu-71239.firebaseapp.com",
+        databaseURL: "https://suhu-71239.firebaseio.com",
+        projectId: "suhu-71239",
+        storageBucket: "suhu-71239.appspot.com",
+        messagingSenderId: "652003251498",
+        appId: "1:652003251498:web:7ca65362f70c11f0effa53",
+        measurementId: "G-MH3WW1ESZK",
+      };
+      firebase.initializeApp(config);
+
+      /*firebase.database().ref("mode login").update({
+        nilai: "hamdi",
+      });*/
+
+      var kalimat;
+      var a;
+      var b;
+      var alamat1,alamat2,alamat3;
+
+      var messagesRef = firebase.database();
+        var ref = messagesRef.ref("hari");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            if(kalimat=="senin_mk_1"){
+              alamat1="status1_senin_mk_1";
+              alamat2="status2_senin_mk_1";
+              alamat3="status3_senin_mk_1";
+            }
+            if(kalimat=="senin_mk_2"){
+              alamat1="status1_senin_mk_2";
+              alamat2="status2_senin_mk_2";
+              alamat3="status3_senin_mk_2";
+            }
+            if(kalimat=="selasa_mk_1"){
+              alamat1="status1_selasa_mk_1";
+              alamat2="status2_selasa_mk_1";
+              alamat3="status3_selasa_mk_1";
+            }
+            if(kalimat=="selasa_mk_2"){
+              alamat1="status1_selasa_mk_2";
+              alamat2="status2_selasa_mk_2";
+              alamat3="status3_selasa_mk_2";
+            }
+            if(kalimat=="rabu_mk_1"){
+              alamat1="status1_rabu_mk_1";
+              alamat2="status2_rabu_mk_1";
+              alamat3="status3_rabu_mk_1";
+            }
+            if(kalimat=="rabu_mk_2"){
+              alamat1="status1_rabu_mk_2";
+              alamat2="status2_rabu_mk_2";
+              alamat3="status3_rabu_mk_2";
+            }
+            if(kalimat=="kamis_mk_1"){
+              alamat1="status1_kamis_mk_1";
+              alamat2="status2_kamis_mk_1";
+              alamat3="status3_kamis_mk_1";
+            }
+            if(kalimat=="kamis_mk_2"){
+              alamat1="status1_kamis_mk_2";
+              alamat2="status2_kamis_mk_2";
+              alamat3="status3_kamis_mk_2";
+            }
+            if(kalimat=="jumat_mk_1"){
+              alamat1="status1_jumat_mk_1";
+              alamat2="status2_jumat_mk_1";
+              alamat3="status3_jumat_mk_1";
+            }
+            if(kalimat=="jumat_mk_2"){
+              alamat1="status1_jumat_mk_2";
+              alamat2="status2_jumat_mk_2";
+              alamat3="status3_jumat_mk_2";
+            }
+          });
+        });
+
+      function satu() {
+        firebase.database().ref(alamat1).update({
+          nilai: "HADIR",
+        });
+        firebase.database().ref("status1").update({
+          nilai: "HADIR",
+        });
+        alert("Dia Present loh");
+      }
+      function dua() {
+        firebase.database().ref(alamat1).update({
+          nilai: "ALPHA",
+        });
+        firebase.database().ref("status1").update({
+          nilai: "ALPHA",
+        });
+        alert("Dia Tidak ada kejelasan");
+      }
+      function tiga() {
+        firebase.database().ref(alamat1).update({
+          nilai: "SAKIT",
+        });
+        firebase.database().ref("status1").update({
+          nilai: "SAKIT",
+        });
+        alert("Dia sakitt..");
+      }
+      function empat() {
+        firebase.database().ref(alamat1).update({
+          nilai: "IZIN",
+        });
+        firebase.database().ref("status1").update({
+          nilai: "IZIN",
+        });
+        alert("Dia Permisi ada acara");
+      }
+
+
+      function lima() {
+        firebase.database().ref(alamat2).update({
+          nilai: "HADIR",
+        });
+        firebase.database().ref("status2").update({
+          nilai: "HADIR",
+        });
+        alert("Dia Present loh");
+      }
+      function enam() {
+        firebase.database().ref(alamat2).update({
+          nilai: "ALPHA",
+        });
+        firebase.database().ref("status2").update({
+          nilai: "ALPHA",
+        });
+        alert("Dia Tidak ada kejelasan");
+      }
+      function tujuh() {
+        firebase.database().ref(alamat2).update({
+          nilai: "SAKIT",
+        });
+        firebase.database().ref("status2").update({
+          nilai: "SAKIT",
+        });
+        alert("Dia sakitt..");
+      }
+      function delapan() {
+        firebase.database().ref(alamat2).update({
+          nilai: "IZIN",
+        });
+        firebase.database().ref("status2").update({
+          nilai: "IZIN",
+        });
+        alert("Dia Permisi ada acara");
+      }
+
+
+      function sembilan() {
+        firebase.database().ref(alamat3).update({
+          nilai: "HADIR",
+        });
+        firebase.database().ref("status3").update({
+          nilai: "HADIR",
+        });
+        alert("Dia Present loh");
+      }
+      function sepuluh() {
+        firebase.database().ref(alamat3).update({
+          nilai: "ALPHA",
+        });
+        firebase.database().ref("status3").update({
+          nilai: "ALPHA",
+        });
+        alert("Dia Tidak ada kejelasan");
+      }
+      function sebelas() {
+        firebase.database().ref(alamat3).update({
+          nilai: "SAKIT",
+        });
+        firebase.database().ref("status3").update({
+          nilai: "SAKIT",
+        });
+        alert("Dia sakitt..");
+      }
+      function duabelas() {
+        firebase.database().ref(alamat3).update({
+          nilai: "IZIN",
+        });
+        firebase.database().ref("status3").update({
+          nilai: "IZIN",
+        });
+        alert("Dia Permisi ada acara");
+      }
+
+      function getdata() {
+        alert("data dierbaharui");
+        getdata_latest();
+
+        getdata_senin_mk_1();
+        getdata_senin_mk_2();
+
+        getdata_selasa_mk_1();
+        getdata_selasa_mk_2();
+
+        getdata_rabu_mk_1()
+        getdata_rabu_mk_2()
+
+        getdata_kamis_mk_1()
+        getdata_kamis_mk_2()
+
+        getdata_jumat_mk_1()
+        getdata_jumat_mk_2()
+        
+      }
+
+      function getdata_latest() {
+        getdata_nama1();
+        getdata_status1();
+        getdata_nama2();
+        getdata_status2();
+        getdata_nama3();
+        getdata_status3();
+      }
+
+      function getdata_senin_mk_1() {
+        getdata_nama1_senin_mk_1();
+        getdata_status1_senin_mk_1();
+        getdata_nama2_senin_mk_1();
+        getdata_status2_senin_mk_1();
+        getdata_nama3_senin_mk_1();
+        getdata_status3_senin_mk_1();
+      }
+      function getdata_senin_mk_2() {
+        getdata_nama1_senin_mk_2();
+        getdata_status1_senin_mk_2();
+        getdata_nama2_senin_mk_2();
+        getdata_status2_senin_mk_2();
+        getdata_nama3_senin_mk_2();
+        getdata_status3_senin_mk_2();
+      }
+
+      function getdata_selasa_mk_1() {
+        getdata_nama1_selasa_mk_1();
+        getdata_status1_selasa_mk_1();
+        getdata_nama2_selasa_mk_1();
+        getdata_status2_selasa_mk_1();
+        getdata_nama3_selasa_mk_1();
+        getdata_status3_selasa_mk_1();
+      }
+      function getdata_selasa_mk_2() {
+        getdata_nama1_selasa_mk_2();
+        getdata_status1_selasa_mk_2();
+        getdata_nama2_selasa_mk_2();
+        getdata_status2_selasa_mk_2();
+        getdata_nama3_selasa_mk_2();
+        getdata_status3_selasa_mk_2();
+      }
+
+      function getdata_rabu_mk_1() {
+        getdata_nama1_rabu_mk_1();
+        getdata_status1_rabu_mk_1();
+        getdata_nama2_rabu_mk_1();
+        getdata_status2_rabu_mk_1();
+        getdata_nama3_rabu_mk_1();
+        getdata_status3_rabu_mk_1();
+      }
+      function getdata_rabu_mk_2() {
+        getdata_nama1_rabu_mk_2();
+        getdata_status1_rabu_mk_2();
+        getdata_nama2_rabu_mk_2();
+        getdata_status2_rabu_mk_2();
+        getdata_nama3_rabu_mk_2();
+        getdata_status3_rabu_mk_2();
+      }
+
+      function getdata_kamis_mk_1() {
+        getdata_nama1_kamis_mk_1();
+        getdata_status1_kamis_mk_1();
+        getdata_nama2_kamis_mk_1();
+        getdata_status2_kamis_mk_1();
+        getdata_nama3_kamis_mk_1();
+        getdata_status3_kamis_mk_1();
+      }
+      function getdata_kamis_mk_2() {
+        getdata_nama1_kamis_mk_2();
+        getdata_status1_kamis_mk_2();
+        getdata_nama2_kamis_mk_2();
+        getdata_status2_kamis_mk_2();
+        getdata_nama3_kamis_mk_2();
+        getdata_status3_kamis_mk_2();
+      }
+
+      function getdata_jumat_mk_1() {
+        getdata_nama1_jumat_mk_1();
+        getdata_status1_jumat_mk_1();
+        getdata_nama2_jumat_mk_1();
+        getdata_status2_jumat_mk_1();
+        getdata_nama3_jumat_mk_1();
+        getdata_status3_jumat_mk_1();
+      }
+      function getdata_jumat_mk_2() {
+        getdata_nama1_jumat_mk_2();
+        getdata_status1_jumat_mk_2();
+        getdata_nama2_jumat_mk_2();
+        getdata_status2_jumat_mk_2();
+        getdata_nama3_jumat_mk_2();
+        getdata_status3_jumat_mk_2();
+      }
+
+      function getdata_nama1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama1").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama2").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama3() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama3");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama3").val(kalimat);
+          });
+        });
+      }
+
+      function getdata_status1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status1").val(kalimat);
+          });
+        });
+      }
+      function getdata_status2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status2").val(kalimat);
+          });
+        });
+      }
+      function getdata_status3() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status3");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status3").val(kalimat);
+          });
+        });
+      }
+
+      function getdata_nama1_senin_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama1_senin_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama1_1a").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama2_senin_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama2_senin_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama2_1a").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama3_senin_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama3_senin_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama3_1a").val(kalimat);
+          });
+        });
+      }
+
+      function getdata_nama1_senin_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama1_senin_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama1_2a").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama2_senin_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama2_senin_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama2_2a").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama3_senin_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama3_senin_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama3_2a").val(kalimat);
+          });
+        });
+      }
+
+      function getdata_nama1_selasa_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama1_selasa_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama1_1b").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama2_selasa_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama2_selasa_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama2_1b").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama3_selasa_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama3_selasa_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama3_1b").val(kalimat);
+          });
+        });
+      }
+
+      function getdata_nama1_selasa_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama1_selasa_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama1_2b").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama2_selasa_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama2_selasa_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama2_2b").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama3_selasa_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama3_selasa_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama3_2b").val(kalimat);
+          });
+        });
+      }
+
+      function getdata_nama1_rabu_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama1_rabu_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama1_1c").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama2_rabu_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama2_rabu_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama2_1c").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama3_rabu_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama3_rabu_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama3_1c").val(kalimat);
+          });
+        });
+      }
+
+      function getdata_nama1_rabu_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama1_rabu_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama1_2c").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama2_rabu_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama2_rabu_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama2_2c").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama3_rabu_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama3_rabu_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama3_2c").val(kalimat);
+          });
+        });
+      }
+
+      function getdata_nama1_kamis_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama1_kamis_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama1_1d").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama2_kamis_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama2_kamis_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama2_1d").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama3_kamis_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama3_kamis_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama3_1d").val(kalimat);
+          });
+        });
+      }
+
+      function getdata_nama1_kamis_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama1_kamis_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama1_2d").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama2_kamis_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama2_kamis_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama2_2d").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama3_kamis_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama3_kamis_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama3_2d").val(kalimat);
+          });
+        });
+      }
+
+      function getdata_nama1_jumat_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama1_jumat_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama1_1e").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama2_jumat_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama2_jumat_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama2_1e").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama3_jumat_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama3_jumat_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama3_1e").val(kalimat);
+          });
+        });
+      }
+
+      function getdata_nama1_jumat_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama1_jumat_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama1_2e").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama2_jumat_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama2_jumat_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama2_2e").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama3_jumat_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama3_jumat_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama3_2e").val(kalimat);
+          });
+        });
+      }
+
+      /*  a = senin; b = selasa; c = rabu; d = kamis; e = jumat
+              1a = Matkul 1 Senin; 2a = Matkul 2 Senin; 1b = Matkul 1 Selasa; 2b = Matkul 2 Selasa; dan seterusnya...
+          */
+
+
+      function getdata_status1_senin_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status1_senin_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status1_1a").val(kalimat);
+          });
+        });
+      }
+      function getdata_status2_senin_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status2_senin_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status2_1a").val(kalimat);
+          });
+        });
+      }
+      function getdata_status3_senin_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status3_senin_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status3_1a").val(kalimat);
+          });
+        });
+      }
+
+      function getdata_status1_senin_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status1_senin_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status1_2a").val(kalimat);
+          });
+        });
+      }
+      function getdata_status2_senin_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status2_senin_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status2_2a").val(kalimat);
+          });
+        });
+      }
+      function getdata_status3_senin_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status3_senin_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status3_2a").val(kalimat);
+          });
+        });
+      }
+      
+      function getdata_status1_selasa_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status1_selasa_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status1_1b").val(kalimat);
+          });
+        });
+      }
+      function getdata_status2_selasa_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status2_selasa_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status2_1b").val(kalimat);
+          });
+        });
+      }
+      function getdata_status3_selasa_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status3_selasa_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status3_1b").val(kalimat);
+          });
+        });
+      }
+
+      function getdata_status1_selasa_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status1_selasa_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status1_2b").val(kalimat);
+          });
+        });
+      }
+      function getdata_status2_selasa_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status2_selasa_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status2_2b").val(kalimat);
+          });
+        });
+      }
+      function getdata_status3_selasa_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status3_selasa_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status3_2b").val(kalimat);
+          });
+        });
+      }
+ 
+      function getdata_status1_rabu_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status1_rabu_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status1_1c").val(kalimat);
+          });
+        });
+      }
+      function getdata_status2_rabu_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status2_rabu_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status2_1c").val(kalimat);
+          });
+        });
+      }
+      function getdata_status3_rabu_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status3_rabu_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status3_1c").val(kalimat);
+          });
+        });
+      }
+
+      function getdata_status1_rabu_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status1_rabu_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status1_2c").val(kalimat);
+          });
+        });
+      }
+      function getdata_status2_rabu_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status2_rabu_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status2_2c").val(kalimat);
+          });
+        });
+      }
+      function getdata_status3_rabu_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status3_rabu_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status3_2c").val(kalimat);
+          });
+        });
+      }
+ 
+      function getdata_status1_kamis_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status1_kamis_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status1_1d").val(kalimat);
+          });
+        });
+      }
+      function getdata_status2_kamis_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status2_kamis_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status2_1d").val(kalimat);
+          });
+        });
+      }
+      function getdata_status3_kamis_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status3_kamis_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status3_1d").val(kalimat);
+          });
+        });
+      }
+
+      function getdata_status1_kamis_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status1_kamis_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status1_2d").val(kalimat);
+          });
+        });
+      }
+      function getdata_status2_kamis_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status2_kamis_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status2_2d").val(kalimat);
+          });
+        });
+      }
+      function getdata_status3_kamis_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status3_kamis_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status3_2d").val(kalimat);
+          });
+        });
+      }
+ 
+      function getdata_status1_jumat_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status1_jumat_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status1_1e").val(kalimat);
+          });
+        });
+      }
+      function getdata_status2_jumat_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status2_jumat_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status2_1e").val(kalimat);
+          });
+        });
+      }
+      function getdata_status3_jumat_mk_1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status3_jumat_mk_1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status3_1e").val(kalimat);
+          });
+        });
+      }
+
+      function getdata_status1_jumat_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status1_jumat_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status1_2e").val(kalimat);
+          });
+        });
+      }
+      function getdata_status2_jumat_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status2_jumat_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status2_2e").val(kalimat);
+          });
+        });
+      }
+      function getdata_status3_jumat_mk_2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status3_jumat_mk_2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status3_2e").val(kalimat);
+          });
+        });
+      }
+ 
+
+
+
+
+      $(document).ready(function () {
+        var nasution = b;
+        /*LATES, LOGIN*/
+        getdata();
+
+        /*SENIN, MK1*/
+        $("#nama1_1a").val("g");
+        $("#status1_1a").val("j");
+        $("#nama2_1a").val("h");
+        $("#status2_1a").val("k");
+        $("#nama3_1a").val("i");
+        $("#status3_1a").val("l");
+        /*SENIN, MK2*/
+        $("#nama1_2a").val("m");
+        $("#status1_2a").val("p");
+        $("#nama2_2a").val("n");
+        $("#status2_2a").val("q");
+        $("#nama3_2a").val("o");
+        $("#status3_2a").val("r");
+
+        /*SELASA, MK1*/
+        $("#nama1_1b").val("s");
+        $("#status1_1b").val("v");
+        $("#nama2_1b").val("t");
+        $("#status2_1b").val("w");
+        $("#nama3_1b").val("u");
+        $("#status3_1b").val("x");
+        /*SELASA, MK2*/
+        $("#nama1_2b").val("y");
+        $("#status1_2b").val("ab");
+        $("#nama2_2b").val("z");
+        $("#status2_2b").val("ac");
+        $("#nama3_2b").val("aa");
+        $("#status3_2b").val("ad");
+
+        /*RABU, MK1*/
+        $("#nama1_1c").val("ae");
+        $("#status1_1c").val("ah");
+        $("#nama2_1c").val("af");
+        $("#status2_1c").val("ai");
+        $("#nama3_1c").val("ag");
+        $("#status3_1c").val("aj");
+        /*RABU, MK2*/
+        $("#nama1_2c").val("ak");
+        $("#status1_2c").val("an");
+        $("#nama2_2c").val("al");
+        $("#status2_2c").val("ao");
+        $("#nama3_2c").val("am");
+        $("#status3_2c").val("ap");
+
+        /*KAMIS, MK1*/
+        $("#nama1_1d").val("aq");
+        $("#status1_1d").val("at");
+        $("#nama2_1d").val("ar");
+        $("#status2_1d").val("au");
+        $("#nama3_1d").val("as");
+        $("#status3_1d").val("av");
+        /*KAMIS, MK2*/
+        $("#nama1_2d").val("aw");
+        $("#status1_2d").val("az");
+        $("#nama2_2d").val("ax");
+        $("#status2_2d").val("ba");
+        $("#nama3_2d").val("ay");
+        $("#status3_2d").val("bc");
+
+        /*JUMAT, MK1*/
+        $("#nama1_1e").val("bd");
+        $("#status1_1e").val("bg");
+        $("#nama2_1e").val("be");
+        $("#status2_1e").val("bh");
+        $("#nama3_1e").val("bf");
+        $("#status3_1e").val("bi");
+        /*JUMAT, MK2*/
+        $("#nama1_2e").val("bj");
+        $("#status1_2e").val("bm");
+        $("#nama2_2e").val("bk");
+        $("#status2_2e").val("bn");
+        $("#nama3_2e").val("bl");
+        $("#status3_2e").val("bo");
+      });
+    </script>
+
+    <footer>
+      <div class="footer" align="right">
+        <div class="container">
+          Created by orang yang ingin wisuda...
+          <br />
+          -2020-
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

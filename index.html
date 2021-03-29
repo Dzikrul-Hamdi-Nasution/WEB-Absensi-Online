@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- <script src="bootstrap/js/style.js"></script> -->
+
+    <link rel="stylesheet" href="index.css" />
+    <title>Absensi Tercanggih</title>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <script src="jquery-3.5.1.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#refresh").click(function () {
+          //getdata_3()
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <script src="/__/firebase/7.14.4/firebase-app.js"></script>
+    <script src="/__/firebase/7.14.4/firebase-analytics.js"></script>
+    <script src="/__/firebase/7.14.4/firebase-auth.js"></script>
+    <script src="/__/firebase/7.14.4/firebase-firestore.js"></script>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container text">
+        <a class="navbar-brand" href="#halaman-utama">
+          <img
+            src="assets/img/fixdy.png"
+            width="90"
+            height="40"
+            alt="logo fixdy"
+          />
+        </a>
+      </div>
+    </nav>
+    <br /><br /><br />
+
+    <div class="container">
+      <h2 align="center">LATEST LOGIN</h2>
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">NAME</th>
+            <th scope="col">STATUSES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>
+              <input style="border: none;" type="text" id="nama1" readonly />
+            </td>
+            <td>
+              <input style="border: none;" type="text" id="status1" readonly />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>
+              <input style="border: none;" type="text" id="nama2" readonly />
+            </td>
+            <td>
+              <input style="border: none;" type="text" id="status2" readonly />
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>
+              <input style="border: none;" type="text" id="nama3" readonly />
+            </td>
+            <td>
+              <input style="border: none;" type="text" id="status3" readonly />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div align="center">
+        <button type="button" id="refresh" class="btn-block t-no">
+          <a href="login.html">
+            LOGIN
+          </a>
+        </button>
+        <br />
+        <br />
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
+    <script>
+      var config = {
+        apiKey: "AIzaSyDJAEvo0zV_oREc9NTyxi4ZE47BP07p7Xw",
+        authDomain: "suhu-71239.firebaseapp.com",
+        databaseURL: "https://suhu-71239.firebaseio.com",
+        projectId: "suhu-71239",
+        storageBucket: "suhu-71239.appspot.com",
+        messagingSenderId: "652003251498",
+        appId: "1:652003251498:web:7ca65362f70c11f0effa53",
+        measurementId: "G-MH3WW1ESZK",
+      };
+      firebase.initializeApp(config);
+
+      $(document).ready(function () {
+        getdata_latest();
+      });
+
+      function getdata_latest() {
+        getdata_nama1();
+        getdata_status1();
+        getdata_nama2();
+        getdata_status2();
+        getdata_nama3();
+        getdata_status3();
+      }
+
+      function getdata_nama1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama1").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama2").val(kalimat);
+          });
+        });
+      }
+      function getdata_nama3() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("nama3");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#nama3").val(kalimat);
+          });
+        });
+      }
+
+      function getdata_status1() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status1");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status1").val(kalimat);
+          });
+        });
+      }
+      function getdata_status2() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status2");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status2").val(kalimat);
+          });
+        });
+      }
+      function getdata_status3() {
+        var messagesRef = firebase.database();
+        var ref = messagesRef.ref("status3");
+
+        ref.on("value", function (snapshot) {
+          snapshot.forEach(function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data);
+            kalimat = data;
+            $("#status3").val(kalimat);
+          });
+        });
+      }
+    </script>
+
+    <footer>
+      <div class="footer" align="right">
+        <div class="container">
+          Created by orang yaang ingin wisuda...
+          <br />
+          -2020-
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

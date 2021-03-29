@@ -1,0 +1,30 @@
+.navbar {
+  background-color: #ba35d0;
+  height: 60px;
+}
+
+.table td,
+.table th {
+  border-top: 2px solid #dd86ec;
+}
+.table thead {
+  border-bottom: 3px solid #dd86ec;
+}
+.table-bordered td,
+.table-bordered th {
+  border: 2px solid #dd86ec;
+}
+
+.footer {
+  background-color: #ba35d0;
+  color: #ffffff;
+}
+
+.t-no {
+  font-family: "Franklin Gothic Medium";
+  font-size: 18px;
+  color: rgb(11, 243, 42);
+  background-color: #f38de5;
+  height: 40px;
+  width: 90px;
+}
